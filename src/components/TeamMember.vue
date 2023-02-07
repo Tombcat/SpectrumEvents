@@ -82,7 +82,6 @@ export default {
           boxShadow: "0 0 0 20px rgb(255,255,255)",
         })
         .addLabel("image")
-
         .from([q(".-title"), q(".-role")], {
           opacity: 0,
           scale: 0.5,
