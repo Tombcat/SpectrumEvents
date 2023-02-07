@@ -59,8 +59,8 @@ export default {
         scrollTrigger: {
           trigger: teamMember,
           start: "center center",
-          end: "bottom center",
-          markers: true,
+          end: "bottom+=1000rem center",
+          //markers: true,
           scrub: 1,
           toggleActions: "play none none none",
           pin: true,

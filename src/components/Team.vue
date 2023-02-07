@@ -3,15 +3,15 @@
     <div class="container p-2">
       <TeamMember photo="pawel.jpg" name="Paweł">
         <template v-slot:description>
-          Także muzyk wokalista i gitarzysta. W branży muzycznej od ponad 15
-          lat, gdzie zbierał doświadczenie również grając we własnym zespole
-          weselnym. Prowadzenie imprez, zarażanie pozytywną energią oraz
-          interakcja z gośćmi to jego naturalne środowisko
+          Poza prowadzeniem imprez także muzyk, wokalista i gitarzysta. W branży
+          muzycznej od ponad 15 lat, gdzie zbierał doświadczenie również grając
+          we własnym zespole weselnym. Prowadzenie imprez, zarażanie pozytywną
+          energią oraz interakcja z gośćmi to jego naturalne środowisko
         </template>
       </TeamMember>
       <TeamMember photo="marcin.jpg" name="Marcin" :left="true">
         <template v-slot:description>
-          Ponad 7 let doświadczenia w prowadzeniu imprez. Aktualny rezydent
+          Ponad 7 lat doświadczenia w prowadzeniu imprez. Aktualny rezydent
           wielu klubów muzycznych, które nauczyły go nowego podejścia do pojęcia
           “muzyka”. Uwielbia wzbudzać emocje za pomocą fal akustycznych. Poza
           muzyką dba o efekty wizualne, te świetlne i te ze szczyptą magii w
