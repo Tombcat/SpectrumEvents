@@ -1,0 +1,28 @@
+<script setup>
+import TheWelcome from "../components/TheWelcome.vue";
+import Hero from "../components/Hero.vue";
+import About from "../components/About.vue";
+import Team from "../components/Team.vue";
+</script>
+
+<template>
+  <main>
+    <!--<TheWelcome />-->
+    <Hero />
+    <About />
+    <Team />
+    <div id="empty">
+
+</div>
+  </main>
+</template>
+
+<style>
+    #empty{
+        height: 100vh;
+    }
+
+    main{
+      overflow-x: hidden;
+    }
+</style>
