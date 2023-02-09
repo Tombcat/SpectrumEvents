@@ -3,10 +3,10 @@
     <div class="container p-2">
       <TeamMember photo="pawel.jpg" name="Paweł">
         <template v-slot:description>
-          Poza prowadzeniem imprez także muzyk, wokalista i gitarzysta. W branży
-          muzycznej od ponad 15 lat, gdzie zbierał doświadczenie również grając
-          we własnym zespole weselnym. Prowadzenie imprez, zarażanie pozytywną
-          energią oraz interakcja z gośćmi to jego naturalne środowisko
+          W branży muzycznej od ponad 15 lat, gdzie zbierał doświadczenie
+          również jako wokalista i gitarzysta grając we własnym zespole
+          weselnym. Prowadzenie imprez, zarażanie pozytywną energią oraz
+          interakcja z gośćmi to jego naturalne środowisko.
         </template>
       </TeamMember>
       <TeamMember photo="marcin.jpg" name="Marcin" :left="true">
@@ -35,9 +35,15 @@
         <template v-slot:description>
           Doświadczenia muzyczne zbierał w krajowych i zagranicznych salach
           koncertowych, z których najznamienitszą była nowojorska Carnegie Hall.
-          Występował z największymi gwiazdami polskiej muzyki rozrywkowej: Ewę
+          Występował z największymi gwiazdami polskiej muzyki rozrywkowej: Ewą
           Bem, Zbigniewem Wodeckim, Ryszardem Rynkowskim, Krystyną Prońko, Hanną
           Banaszak i Andrzejem Piasecznym.
+        </template>
+      </TeamMember>
+      <TeamMember photo="kamil.jpg" name="Kamil" role="Kamerzysta / Fotograf">
+        <template v-slot:description>
+          Najlepszy ziomek mojego ziomka jakiego znam, ogólnie jego filmiki
+          zawsze mają początek i koniec :)
         </template>
       </TeamMember>
     </div>

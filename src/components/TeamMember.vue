@@ -1,26 +1,24 @@
 <template>
   <div class="teamMember" ref="teamMember">
-    <h2 class="text-center mb-4 px-2 -title">
+    <span
+      class="_frameDesc --top position-absolute zindex-1 text-center margin-auto start-0 end-0"
+    >
       {{ name }}
-    </h2>
-    <div class="">
-      <img
-        class="w-100 h-100 imageFrame -photo"
-        :src="getImageUrl()"
-        alt="hello image"
-      />
-      <div class="info h-100 w-100">
-        <div class="-background"></div>
-        <div
-          class="-text h-100 w-100 d-flex justify-content-center align-items-center flex-column p-2"
-        >
-          <p style="max-width: 600px">
-            <slot name="description"></slot>
-          </p>
-        </div>
-      </div>
+    </span>
+    <img class="_photo" :src="getImageUrl()" alt="hello image" />
+    <div class="_background h-100 w-100 position-absolute top-0"></div>
+    <div
+      class="_text position-absolute top-0 h-100 w-100 d-flex justify-content-center align-items-center flex-column p-2 text-justify text-white"
+    >
+      <span style="max-width: 500px">
+        <slot name="description"></slot>
+      </span>
     </div>
-    <p class="-role">{{ role }} - {{ name }}</p>
+    <span
+      class="_frameDesc --bottom position-absolute zindex-1 text-center margin-auto start-0 end-0"
+    >
+      {{ role }}
+    </span>
   </div>
 </template>
 
@@ -59,7 +57,7 @@ export default {
         scrollTrigger: {
           trigger: teamMember,
           start: "center center",
-          end: "bottom+=1000rem center",
+          end: "bottom+=150vh center",
           //markers: true,
           scrub: 1,
           toggleActions: "play none none none",
@@ -75,31 +73,26 @@ export default {
 
       tl.addLabel("start")
         .from(teamMember, {
+          scale: 0.1,
           x: this.left % 2 == 0 ? "100vw" : "-100vw",
-          duration: 1,
+          duration: 2,
         })
-        .to(q(".-photo"), {
+        .to(q("._photo"), 2, {
           boxShadow: "0 0 0 20px rgb(255,255,255)",
+          ease: "elastic.out(1, 0.5)",
         })
-        .addLabel("image")
-        .from([q(".-title"), q(".-role")], {
+        .from(q(".teamMember ._frameDesc"), {
           opacity: 0,
           scale: 0.5,
           duration: 1,
         })
-        .addLabel("title")
-        .to(q(".info .-background"), {
-          opacity: 0.8,
-          width: "100%",
-          height: "100%",
-          borderRadius: 0,
+        .addLabel("image")
+        .from(q(".teamMember ._background"), {
+          opacity: 0,
           delay: 0.2,
-          duration: 1,
-          top: 0,
-          left: 0,
+          duration: 0.5,
         })
-        .addLabel("background")
-        .from(q(".info .-text"), {
+        .from(q(".teamMember ._text"), {
           opacity: 0,
           duration: 2,
         })
@@ -113,47 +106,39 @@ export default {
 </script>
 
 <style>
-.info {
-  position: absolute;
-  z-index: 5;
-  bottom: 0;
-  min-width: 300px;
-  color: #fff;
-  width: 100%;
-  height: 100%;
-  /*font-size: 1.5rem;*/
-  text-align: center;
-  text-shadow: 4px 4px 12px rgba(0, 0, 0, 1);
-}
-
-.info .-background {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+._background {
+  opacity: 0.8;
   background: #181818;
-  opacity: 0;
-  border-radius: 100%;
-  height: 10px;
-  width: 200px;
 }
 
-.-title {
-  font-size: 4rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.-role {
-  z-index: 10;
-  /*color: transparent;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #fff;*/
+._frameDesc {
   color: #000;
-  top: -0.2rem;
-  font-size: 1rem;
-  text-align: center;
-  font-weight: 700;
   text-transform: uppercase;
+  font-weight: 700;
   white-space: pre;
+}
+
+.--top {
+  top: -1.4rem;
+}
+
+.--bottom {
+  bottom: -1.4rem;
+}
+
+.teamMember {
+  min-height: 260px;
+  max-height: calc(90vh - 6.5rem);
+  max-width: calc(100% - 20px);
+  margin: 0 auto;
+  aspect-ratio: 10 / 9;
+}
+
+.teamMember ._photo {
+  aspect-ratio: 10 / 9;
+  object-fit: cover;
+  display: block;
+  overflow: hidden;
+  height: 100%;
 }
 </style>
