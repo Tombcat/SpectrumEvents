@@ -68,7 +68,7 @@ export default {
         scrollTrigger: {
           trigger: "#about",
           start: "50 80%",
-          markers: true,
+          //markers: true,
           toggleActions: "play none none reverse",
         },
       }
