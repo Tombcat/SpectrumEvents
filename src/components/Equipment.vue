@@ -1,5 +1,5 @@
 <template>
-  <section id="about">
+  <section id="About">
     <div class="container">
       <div class="row">
         <div class="col-md-12 py-5" id="oNasWiedziec">
@@ -66,9 +66,9 @@ export default {
         ease: "easyInOut",
         stagger: 0.2,
         scrollTrigger: {
-          trigger: "#about",
+          trigger: "#About",
           start: "50 80%",
-          markers: true,
+          //markers: true,
           toggleActions: "play none none reverse",
         },
       }

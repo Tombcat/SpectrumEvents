@@ -95,6 +95,7 @@ export default {
         .from(q(".teamMember ._text"), {
           opacity: 0,
           duration: 2,
+          onComplete: () => this.ScrollTrigger.refresh(),
         })
         .addLabel("text");
     },

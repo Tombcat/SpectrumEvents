@@ -308,9 +308,9 @@ export default {
 #hero {
   height: 150vh;
   min-height: 40vh;
-  background-color: #f3cb2d;
+  background-color: var(--color-primary);
   color: #222831;
-  margin-bottom: 30vh;
+  margin-bottom: 35rem;
 }
 
 #hero-logo {

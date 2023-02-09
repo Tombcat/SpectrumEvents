@@ -1,6 +1,12 @@
 <template>
   <section id="Team">
-    <div class="container p-2">
+    <div class="container-xl mt-5">
+      <div class="row text-center">
+        <h1 class="text-primary">Poznajcie nas zespół</h1>
+        <p>niezłe z nas kocury</p>
+      </div>
+    </div>
+    <div class="container-xl p-2">
       <TeamMember photo="pawel.jpg" name="Paweł">
         <template v-slot:description>
           W branży muzycznej od ponad 15 lat, gdzie zbierał doświadczenie
@@ -40,7 +46,12 @@
           Banaszak i Andrzejem Piasecznym.
         </template>
       </TeamMember>
-      <TeamMember photo="kamil.jpg" name="Kamil" role="Kamerzysta / Fotograf">
+      <TeamMember
+        photo="kamil.jpg"
+        name="Kamil"
+        role="Kamerzysta / Fotograf"
+        :left="true"
+      >
         <template v-slot:description>
           Najlepszy ziomek mojego ziomka jakiego znam, ogólnie jego filmiki
           zawsze mają początek i koniec :)
