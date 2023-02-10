@@ -81,15 +81,25 @@ export default {
           boxShadow: "0 0 0 calc(1.2vw + 20px) rgb(255,255,255)",
           ease: "elastic.out(1, 0.5)",
         })
-        .from(q(".teamMember ._frameDesc"), {
-          opacity: 0,
-          scale: 0.5,
-          duration: 1,
-        })
+        .fromTo(
+          q(".teamMember ._frameDesc"),
+          {
+            opacity: 0,
+            scale: 0.5,
+            duration: 1,
+          },
+          {
+            color: "#000",
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            //ease: "elastic.out(1, 0.5)",
+          }
+        )
         .addLabel("image")
         .from(q(".teamMember ._background"), {
           opacity: 0,
-          delay: 0.2,
+          delay: 0.5,
           duration: 0.5,
         })
         .from(q(".teamMember ._text"), {
@@ -112,7 +122,7 @@ export default {
 }
 
 ._frameDesc {
-  color: #000;
+  color: #fff;
   text-transform: uppercase;
   font-weight: 700;
   white-space: pre;

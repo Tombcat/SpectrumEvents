@@ -69,7 +69,7 @@ export default {
         stagger: 0.2,
         scrollTrigger: {
           trigger: "#about",
-          start: "50 80%",
+          start: "center 80%",
           //markers: true,
           toggleActions: "play none none reverse",
         },

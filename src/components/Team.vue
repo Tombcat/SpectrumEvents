@@ -1,6 +1,6 @@
 <template>
   <section id="Team">
-    <div class="container-xl mt-5">
+    <div class="container-fluid mt-5">
       <div class="row text-center">
         <h1 class="text-primary">Poznajcie nas zespół</h1>
         <p>niezłe z nas kocury</p>
@@ -76,4 +76,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#Team {
+  min-height: calc(6 * 140vh);
+}
+</style>

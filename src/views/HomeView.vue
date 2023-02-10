@@ -13,8 +13,8 @@ import Games from "../components/Games.vue";
     <Hero />
 
     <About />
-    <Games />
     <Team />
+    <Games />
 
     <div id="empty"></div>
   </main>

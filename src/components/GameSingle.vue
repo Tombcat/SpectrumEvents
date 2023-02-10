@@ -1,6 +1,6 @@
 <template>
   <div class="row game" ref="row">
-    <div class="col-md p-0" :class="{ 'order-md-2': reversed }">
+    <div class="col-md-6 p-0" :class="{ 'order-md-2': reversed }">
       <div class="image_cont">
         <img
           ref="photo"
