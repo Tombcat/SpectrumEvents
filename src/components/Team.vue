@@ -6,7 +6,7 @@
         <p>niezłe z nas kocury</p>
       </div>
     </div>
-    <div class="container-xl p-2">
+    <div class="container-fluid p-2">
       <TeamMember photo="pawel.jpg" name="Paweł">
         <template v-slot:description>
           W branży muzycznej od ponad 15 lat, gdzie zbierał doświadczenie

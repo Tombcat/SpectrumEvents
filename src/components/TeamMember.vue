@@ -10,7 +10,7 @@
     <div
       class="_text position-absolute top-0 h-100 w-100 d-flex justify-content-center align-items-center flex-column p-2 text-justify text-white"
     >
-      <span style="max-width: 500px">
+      <span style="max-width: 85vmin">
         <slot name="description"></slot>
       </span>
     </div>
@@ -78,7 +78,7 @@ export default {
           duration: 2,
         })
         .to(q("._photo"), 2, {
-          boxShadow: "0 0 0 20px rgb(255,255,255)",
+          boxShadow: "0 0 0 calc(1.2vw + 20px) rgb(255,255,255)",
           ease: "elastic.out(1, 0.5)",
         })
         .from(q(".teamMember ._frameDesc"), {
@@ -95,7 +95,6 @@ export default {
         .from(q(".teamMember ._text"), {
           opacity: 0,
           duration: 2,
-          onComplete: () => this.ScrollTrigger.refresh(),
         })
         .addLabel("text");
     },
@@ -120,11 +119,11 @@ export default {
 }
 
 .--top {
-  top: -1.4rem;
+  top: calc(-1.6vw - 20px);
 }
 
 .--bottom {
-  bottom: -1.4rem;
+  bottom: calc(-1.6vw - 20px);
 }
 
 .teamMember {

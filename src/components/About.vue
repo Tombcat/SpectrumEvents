@@ -1,9 +1,11 @@
 <template>
   <section id="about">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-md-12 py-5" id="oNasWiedziec">
-          <h1 id="o-nas-wiedziec">Co powinniście o nas wiedzieć</h1>
+          <h1 id="o-nas-wiedziec" class="text-primary">
+            Co powinniście o nas wiedzieć
+          </h1>
           <p>
             <b>Spectrum Events</b> to firma zajmująca się profesjonalną obsługą
             imprez okolicznościowych. W skład całego zespołu wchodzą DJ’e/

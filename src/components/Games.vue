@@ -1,6 +1,6 @@
 <template>
   <section id="games">
-    <div class="container-xl mb-5">
+    <div class="container-fluid mb-5">
       <div class="row">
         <h1 class="text-primary">Zabawy weselne</h1>
         <p>
@@ -11,7 +11,7 @@
         </p>
       </div>
     </div>
-    <div class="container-xl">
+    <div class="container-fluid">
       <GameSingle photo="1.jpg" title="Animacje taneczne">
         <template v-slot:description>
           Razem tańczymy układy, które pokazuje DJ/Wodzirej. Tańce są proste,
@@ -73,6 +73,6 @@ export default {
 
 <style>
 #games {
-  margin-top: 10vh;
+  margin-top: 5vw;
 }
 </style>

@@ -4,18 +4,19 @@
       <div class="image_cont">
         <img
           ref="photo"
-          class="w-100 -photo"
+          class="-photo"
+          :class="{ 'game-photo__reverse': reversed }"
           :src="getImageUrl()"
           alt="Gra weselna"
         />
       </div>
     </div>
     <div class="col-md p-0" :class="{ 'order-md-1': reversed }">
-      <div class="p-3" :class="{ 'text-end': reversed }">
-        <h2 class="-title text-primary">
+      <div class="-text" :class="{ 'text-end': reversed }">
+        <p class="-title text-primary">
           <span class="bullet"></span>
           <span>{{ title }}</span>
-        </h2>
+        </p>
         <p class="-description">
           <slot name="description"></slot>
         </p>
@@ -51,54 +52,75 @@ export default {
   mounted() {
     const { photo, row } = this.$refs;
 
-    var tl = this.gsap.timeline({
+    this.gsap.to(photo, 0.5, {
       scrollTrigger: {
         trigger: row,
-        start: "top bottom-=10%",
+        start: "top bottom",
         end: "bottom top",
         //markers: true,
         scrub: 2,
         toggleActions: "play none none none",
       },
+      x: this.reversed ? "-25%" : "25%",
     });
 
-    tl.to(photo, {
-      duration: 0.5,
-      y: "10%",
+    this.gsap.from(row, {
+      scrollTrigger: {
+        trigger: row,
+        start: "center-=10% bottom-=10%",
+        end: "bottom bottom-=10%",
+        //markers: true,
+        //scrub: 2,
+        toggleActions: "play none none reverse",
+      },
+      x: this.reversed ? "-50%" : "50%",
+      duration: 1,
+      opacity: 0,
+      //ease: "back.out(1)",
     });
   },
 };
 </script>
 
 <style>
+.-text {
+  padding: 0 2vw;
+  font-size: calc(1.8vw + 12px);
+}
 .game .-description {
-  font-size: 1.2rem;
+  color: #fff;
 }
 
-.game .-title {
-  font-size: 1rem;
-}
+/*.game .-title {
+  font-size: calc(1.5vw + 12px);
+}*/
 
 .bullet {
-  width: 1rem;
-  height: 0.7rem;
+  width: calc(2vw + 16px);
+  height: calc(1vw + 8px);
   background-color: currentcolor;
   display: inline-block;
   /*border-radius: 50%;*/
-  margin-right: 0.625rem;
+  margin-right: 1vw;
 }
 
 .image_cont {
   position: relative;
   overflow: hidden;
-  height: 300px;
+  height: calc(20vw + 250px);
 }
 
 .-photo {
   position: absolute;
-  width: 100%;
-  height: 140%;
+  width: 135%;
+  height: 100%;
   object-fit: cover;
-  bottom: -15%;
+  bottom: 0;
+  left: -38%;
+}
+
+.game-photo__reverse {
+  left: auto;
+  right: -38%;
 }
 </style>

@@ -310,13 +310,14 @@ export default {
   min-height: 40vh;
   background-color: var(--color-primary);
   color: #222831;
-  margin-bottom: 35rem;
+  margin-bottom: 25vw;
 }
 
 #hero-logo {
   position: relative;
   top: 25vh;
-  max-height: 25%;
+  min-height: 25vw;
+  max-width: 75vw;
   z-index: 200;
 }
 

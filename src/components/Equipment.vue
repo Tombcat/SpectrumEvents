@@ -1,80 +1,73 @@
 <template>
-  <section id="About">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 py-5" id="oNasWiedziec">
-          <h1 id="o-nas-wiedziec">Co powinniście o nas wiedzieć</h1>
-          <p>
-            <b>Spectrum Events</b> to firma zajmująca się profesjonalną obsługą
-            imprez okolicznościowych. W skład całego zespołu wchodzą DJ’e/
-            Wodzireje, Konferansjerzy, profesjonalni saksofoniści, a także,
-            kamerzysta i fotograf. Branżą imprez weselnych i okolicznościowych
-            zajmujemy się od ponad 15 lat. Obsłużyliśmy mnóstwo koncertów i
-            imprez, co zaowocowało ogromnym doświadczeniem, pomysłowością i
-            indywidualnym podejściem do klienta. Każde zlecenie poprzedzone jest
-            rozmową dotyczącą preferencji Młodej Pary oraz gości weselnych, co
-            gwarantuje stworzenie oferty idealnie dopasowanej do Waszych
-            oczekiwań.
-          </p>
-          <p>
-            <b
-              >Stale się rozwijamy, by zapewniać rozrywkę na najwyższym poziomie
-              oraz maksymalne zadowolenie klientów.</b
-            >
-          </p>
-          <p>
-            Wybierając naszą ofertę decydujecie się na profesjonalną oprawę
-            wesela, która zapewni Wam oraz gościom niezapomniane wspomnienia
-            pełne doskonałej muzyki, dobieranej odpowiednio do wieku oraz
-            preferencji uczestników uroczystości. Całość uwieczni nasz
-            kamerzysta i fotograf, abyście zawsze mogli wrócić do tych
-            wspaniałych chwil
-          </p>
-        </div>
-      </div>
-    </div>
+  <section id="equipment">
+    <video class="-video" :src="video" autoplay loop muted></video>
+    <h2 class="test">
+      <span class="spectrum" v-for="n in 20">SPECTRUM <br /></span>
+    </h2>
   </section>
 </template>
 
 <script>
-import image from "@/assets/zdj/main.jpg";
-import image2 from "@/assets/zdj/first.jpg";
+import video from "@/assets/back.mp4";
 
 export default {
-  name: "About",
+  name: "equipment",
   data() {
     return {
-      image: image,
-      image2: image2,
+      video: video,
     };
   },
   mounted() {
-    console.log("Mount");
-
-    const oNasWiedziec = document.getElementById("oNasWiedziec");
-
     this.gsap.fromTo(
-      oNasWiedziec.children,
+      ".spectrum",
+      2,
       {
-        opacity: 0,
-        y: 200,
+        lineHeight: "18vw",
+        fontSize: "5vw",
+        x: -500,
       },
       {
-        opacity: 1,
-        y: 0,
-        duration: 1.5,
-        ease: "easyInOut",
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: "#About",
-          start: "50 80%",
-          //markers: true,
-          toggleActions: "play none none reverse",
-        },
+        lineHeight: "5vw",
+        fontSize: "18vw",
+        x: 0,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
       }
     );
   },
 };
 </script>
 
-<style></style>
+<style>
+#equipment {
+  width: 100%;
+  height: 120vh;
+  position: relative;
+}
+
+.-video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.test {
+  font-weight: 700;
+  width: 100%;
+  height: 100%;
+  font-size: 18vw;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  mix-blend-mode: multiply;
+  line-height: 3vw;
+}
+
+.test span {
+  font-weight: 700;
+}
+</style>

@@ -11,6 +11,7 @@ import Games from "../components/Games.vue";
   <main>
     <!--<TheWelcome />-->
     <Hero />
+
     <About />
     <Games />
     <Team />
