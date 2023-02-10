@@ -98,7 +98,7 @@ export default {
   position: absolute;
   width: 100%;
   height: 140%;
-  object-fit: contain;
+  object-fit: cover;
   bottom: -15%;
 }
 </style>
