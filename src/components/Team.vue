@@ -76,8 +76,4 @@ export default {
 };
 </script>
 
-<style>
-#Team {
-  min-height: calc(6 * 140vh);
-}
-</style>
+<style></style>

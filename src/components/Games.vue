@@ -1,5 +1,5 @@
 <template>
-  <section id="games">
+  <section id="games" class="mt-2">
     <div class="container-fluid mb-5">
       <div class="row">
         <h1 class="text-primary">Zabawy weselne</h1>
@@ -71,8 +71,4 @@ export default {
 };
 </script>
 
-<style>
-#games {
-  margin-top: 5vw;
-}
-</style>
+<style></style>

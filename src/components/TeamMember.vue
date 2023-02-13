@@ -1,24 +1,26 @@
 <template>
   <div class="teamMember" ref="teamMember">
-    <span
-      class="_frameDesc --top position-absolute zindex-1 text-center margin-auto start-0 end-0"
-    >
-      {{ name }}
-    </span>
-    <img class="_photo" :src="getImageUrl()" alt="hello image" />
-    <div class="_background h-100 w-100 position-absolute top-0"></div>
-    <div
-      class="_text position-absolute top-0 h-100 w-100 d-flex justify-content-center align-items-center flex-column p-2 text-justify text-white"
-    >
-      <span style="max-width: 85vmin">
-        <slot name="description"></slot>
+    <div class="content">
+      <span
+        class="_frameDesc --top position-absolute zindex-1 text-center margin-auto start-0 end-0"
+      >
+        {{ name }}
+      </span>
+      <img class="_photo" :src="getImageUrl()" alt="hello image" />
+      <div class="_background h-100 w-100 position-absolute top-0"></div>
+      <div
+        class="_text position-absolute top-0 h-100 w-100 d-flex justify-content-center align-items-center flex-column p-2 text-justify text-white"
+      >
+        <span style="max-width: 85vmin">
+          <slot name="description"></slot>
+        </span>
+      </div>
+      <span
+        class="_frameDesc --bottom position-absolute zindex-1 text-center margin-auto start-0 end-0"
+      >
+        {{ role }}
       </span>
     </div>
-    <span
-      class="_frameDesc --bottom position-absolute zindex-1 text-center margin-auto start-0 end-0"
-    >
-      {{ role }}
-    </span>
   </div>
 </template>
 
@@ -48,6 +50,7 @@ export default {
       // This path must be correct for your file
       return new URL(`../assets/zdj/${this.photo}`, import.meta.url);
     },
+
     animate() {
       const q = this.gsap.utils.selector(this.$refs.teamMember);
 
@@ -56,12 +59,16 @@ export default {
       var tl = this.gsap.timeline({
         scrollTrigger: {
           trigger: teamMember,
-          start: "center center",
-          end: "bottom+=150vh center",
+          start: () =>
+            "top top+=" +
+            (window.innerHeight -
+              document.querySelector(".content").clientHeight) /
+              2,
+          end: "bottom bottom",
           //markers: true,
           scrub: 1,
           toggleActions: "play none none none",
-          pin: true,
+          pin: q(".content"),
           snap: {
             snapTo: "labels", // snap to the closest label in the timeline
             duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
@@ -72,10 +79,11 @@ export default {
       });
 
       tl.addLabel("start")
-        .from(teamMember, {
+        .from(q(".content"), {
           scale: 0.1,
           x: this.left % 2 == 0 ? "100vw" : "-100vw",
           duration: 2,
+          ease: "easy.inOut",
         })
         .to(q("._photo"), 2, {
           boxShadow: "0 0 0 calc(1.2vw + 20px) rgb(255,255,255)",
@@ -137,6 +145,10 @@ export default {
 }
 
 .teamMember {
+  height: 200vh;
+}
+
+.content {
   min-height: 260px;
   max-height: calc(90vh - 6.5rem);
   max-width: calc(100% - 20px);
@@ -144,7 +156,7 @@ export default {
   aspect-ratio: 10 / 9;
 }
 
-.teamMember ._photo {
+.content ._photo {
   aspect-ratio: 10 / 9;
   object-fit: cover;
   display: block;
