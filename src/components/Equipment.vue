@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import video from "@/assets/back.mp4";
+import video from "@/assets/spectrum.mp4";
 
 export default {
   name: "equipment",
@@ -18,7 +18,7 @@ export default {
     };
   },
   mounted() {
-    this.gsap.fromTo(
+    /*this.gsap.fromTo(
       ".spectrum",
       2,
       {
@@ -34,7 +34,7 @@ export default {
         yoyo: true,
         ease: "sine.inOut",
       }
-    );
+    );*/
   },
 };
 </script>
@@ -56,6 +56,7 @@ export default {
 }
 
 .test {
+  display: none;
   font-weight: 700;
   width: 100%;
   height: 100%;
@@ -64,7 +65,7 @@ export default {
   background-color: #000;
   color: #fff;
   mix-blend-mode: multiply;
-  line-height: 3vw;
+  line-height: 13vw;
 }
 
 .test span {

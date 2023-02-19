@@ -4,8 +4,10 @@ import router from "./router";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
 import "bootstrap/dist/css/bootstrap.css";
 import 'bootstrap/dist/js/bootstrap.js'

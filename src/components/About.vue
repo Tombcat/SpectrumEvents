@@ -2,7 +2,7 @@
   <section id="about">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-12 py-5" id="oNasWiedziec">
+        <div class="col-md-12 py-5 text-justify" id="oNasWiedziec">
           <h1 id="o-nas-wiedziec" class="text-primary">
             Co powinniście o nas wiedzieć
           </h1>
@@ -42,8 +42,13 @@
 import image from "@/assets/zdj/main.jpg";
 import image2 from "@/assets/zdj/first.jpg";
 
+import Notes from "./Notes.vue";
+
 export default {
   name: "About",
+  components: {
+    Notes,
+  },
   data() {
     return {
       image: image,
@@ -79,4 +84,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#oNasWiedziec {
+  z-index: 500;
+}
+</style>

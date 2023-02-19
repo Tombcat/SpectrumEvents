@@ -145,7 +145,7 @@ export default {
 }
 
 .teamMember {
-  height: 200vh;
+  height: 150vh;
 }
 
 .content {
