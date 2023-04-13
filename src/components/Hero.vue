@@ -228,6 +228,9 @@
         </g>
       </svg>
     </div>
+
+    <div id="hero-bg"></div>
+
     <div class="title text-center h-100 d-flex flex-column align-items-center">
       <!--<h1>Spectrum Events</h1>
             <p>Grupa ludzi z pasją do muzyki</p>-->
@@ -236,15 +239,17 @@
 
     <!--<img class="position-absolute" src="https://cdn.pixabay.com/photo/2016/10/18/19/34/skyline-1751179_1280.png" alt="">-->
 
-    <div class="wave">
+    <div class="wave" v-if="!true">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
-          fill="#E6A901"
+          fill="var(--color-primary)"
           fill-opacity="1"
           d="M0,128L0,96L36.9,96L36.9,288L73.8,288L73.8,128L110.8,128L110.8,96L147.7,96L147.7,128L184.6,128L184.6,64L221.5,64L221.5,192L258.5,192L258.5,32L295.4,32L295.4,160L332.3,160L332.3,256L369.2,256L369.2,160L406.2,160L406.2,224L443.1,224L443.1,160L480,160L480,32L516.9,32L516.9,224L553.8,224L553.8,128L590.8,128L590.8,128L627.7,128L627.7,224L664.6,224L664.6,160L701.5,160L701.5,320L738.5,320L738.5,160L775.4,160L775.4,192L812.3,192L812.3,224L849.2,224L849.2,256L886.2,256L886.2,128L923.1,128L923.1,128L960,128L960,64L996.9,64L996.9,192L1033.8,192L1033.8,224L1070.8,224L1070.8,64L1107.7,64L1107.7,64L1144.6,64L1144.6,160L1181.5,160L1181.5,224L1218.5,224L1218.5,64L1255.4,64L1255.4,32L1292.3,32L1292.3,64L1329.2,64L1329.2,96L1366.2,96L1366.2,32L1403.1,32L1403.1,160L1440,160L1440,0L1403.1,0L1403.1,0L1366.2,0L1366.2,0L1329.2,0L1329.2,0L1292.3,0L1292.3,0L1255.4,0L1255.4,0L1218.5,0L1218.5,0L1181.5,0L1181.5,0L1144.6,0L1144.6,0L1107.7,0L1107.7,0L1070.8,0L1070.8,0L1033.8,0L1033.8,0L996.9,0L996.9,0L960,0L960,0L923.1,0L923.1,0L886.2,0L886.2,0L849.2,0L849.2,0L812.3,0L812.3,0L775.4,0L775.4,0L738.5,0L738.5,0L701.5,0L701.5,0L664.6,0L664.6,0L627.7,0L627.7,0L590.8,0L590.8,0L553.8,0L553.8,0L516.9,0L516.9,0L480,0L480,0L443.1,0L443.1,0L406.2,0L406.2,0L369.2,0L369.2,0L332.3,0L332.3,0L295.4,0L295.4,0L258.5,0L258.5,0L221.5,0L221.5,0L184.6,0L184.6,0L147.7,0L147.7,0L110.8,0L110.8,0L73.8,0L73.8,0L36.9,0L36.9,0L0,0L0,0Z"
         ></path>
       </svg>
     </div>
+
+    <video class="-video" :src="video" autoplay loop muted></video>
   </section>
 </template>
 
@@ -256,6 +261,8 @@ import Notes from "./Notes.vue";
 
 import logo from "@/assets/logo@0,5x.png";
 
+import video from "@/assets/back.mp4";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
@@ -266,6 +273,7 @@ export default {
   data() {
     return {
       logo: logo,
+      video: video,
     };
   },
   mounted() {
@@ -288,7 +296,7 @@ export default {
       });
     });
 
-    var tl = this.gsap.timeline({
+    let tl = this.gsap.timeline({
       scrollTrigger: {
         trigger: "#hero",
         start: "top top",
@@ -301,12 +309,13 @@ export default {
 
     tl.to("#hero-logo", { y: "80vh", duration: 3, rotate: 360 });
 
-    this.gsap.to(window, {
+    //Scroll section on page load
+    /*this.gsap.to(window, {
       duration: 3,
       delay: 1,
       scrollTo: 2000,
       ease: "easyIn",
-    });
+    });*/
   },
 };
 </script>
@@ -315,17 +324,30 @@ export default {
 #hero {
   height: 150vh;
   min-height: 40vh;
-  background-color: var(--color-primary);
+  /*background-color: var(--color-primary);*/
   color: #222831;
-  margin-bottom: 25vw;
+  background-image: url("https://play-lh.googleusercontent.com/-Ynyw5dSb0wlY-LWeHrkC-CDxf0Mryl1i6oYGO7WaJDyTvHndUgj0Juvg_xLW1iaq8Q");
+  background-size: cover;
+  background-position: center;
+
+  /*margin-bottom: 25vw;*/
 }
 
 #hero-logo {
   position: relative;
   top: 25vh;
-  min-height: 35vw;
+  min-height: 20vw;
   max-width: 75vw;
   z-index: 200;
+}
+
+#hero-bg {
+  background-color: var(--color-primary);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 1;
+  z-index: 5;
 }
 
 .title h1 {
@@ -342,5 +364,15 @@ export default {
   width: 100%;
   z-index: 10;
   position: absolute;
+}
+
+.-video {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: 4;
 }
 </style>

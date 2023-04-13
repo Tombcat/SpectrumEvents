@@ -20,7 +20,13 @@
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 
-  --color-primary: #E6A901
+  --color-primary: #ecad00;
+  --color-primary-darken: #584100;
+
+  --background-primary : #181818;
+
+  --background-secondary : #181818;
+  
 }
 
 /* semantic color variables for this project */
@@ -77,10 +83,10 @@ body {
   color: var(--color-text);
   background: var(--color-background);
   transition: color 0.5s, background-color 0.5s;
-  line-height: 1.6;
+  line-height: 1.4;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  font-size: calc(12px + 1.2vw);/*18px;*/
+  font-size: calc(12px + 1vw);/*18px;*/
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

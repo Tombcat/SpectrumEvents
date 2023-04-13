@@ -56,7 +56,7 @@ export default {
 
       const { teamMember } = this.$refs;
 
-      var tl = this.gsap.timeline({
+      let tl = this.gsap.timeline({
         scrollTrigger: {
           trigger: teamMember,
           start: () =>
@@ -86,7 +86,7 @@ export default {
           ease: "easy.inOut",
         })
         .to(q("._photo"), 2, {
-          boxShadow: "0 0 0 calc(1.2vw + 20px) rgb(255,255,255)",
+          boxShadow: "0 0 0 calc(1.2vw + 20px) var(--color-background-soft)",
           ease: "elastic.out(1, 0.5)",
         })
         .fromTo(
@@ -97,7 +97,7 @@ export default {
             duration: 1,
           },
           {
-            color: "#000",
+            color: "var(--color-text)",
             opacity: 1,
             scale: 1,
             duration: 1,
@@ -126,7 +126,7 @@ export default {
 <style>
 ._background {
   opacity: 0.8;
-  background: #181818;
+  background: var(--color-background);
 }
 
 ._frameDesc {
@@ -137,11 +137,11 @@ export default {
 }
 
 .--top {
-  top: calc(-1.6vw - 20px);
+  top: calc(-1.4vw - 20px);
 }
 
 .--bottom {
-  bottom: calc(-1.6vw - 20px);
+  bottom: calc(-1.4vw - 20px);
 }
 
 .teamMember {
