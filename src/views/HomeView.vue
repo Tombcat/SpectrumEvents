@@ -7,6 +7,8 @@ import Equipment from "../components/Equipment.vue";
 import Games from "../components/Games.vue";
 
 import SpiningLogo from "../components/SpiningLogo.vue";
+import Contact from "../components/Contact.vue";
+import Extras from "../components/Extras.vue";
 </script>
 
 <template>
@@ -15,6 +17,9 @@ import SpiningLogo from "../components/SpiningLogo.vue";
     <Hero />
 
     <About />
+
+    <Extras />
+    <Contact />
 
     <Team />
     <Games />

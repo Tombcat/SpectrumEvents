@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import image from "@/assets/zdj/spectrum16.jpg";
+import image from "@/assets/zdj/main2.jpg";
 import pawel from "@/assets/zdj/pawel3.jpg";
 
 import Notes from "./Notes.vue";
