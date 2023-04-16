@@ -37,10 +37,11 @@
     <div class="container-fluid p-2" id="teamMembers">
       <TeamMember photo="pawel.jpg" name="Paweł">
         <template v-slot:description>
-          W branży muzycznej od ponad 15 lat, gdzie zbierał doświadczenie
-          również jako wokalista i gitarzysta grając we własnym zespole
-          weselnym. Prowadzenie imprez, zarażanie pozytywną energią oraz
-          interakcja z gośćmi to jego naturalne środowisko.
+          Założyciel Spectrum Events. W branży muzycznej od ponad 15 lat, gdzie
+          zbierał doświadczenie również jako wokalista i gitarzysta grając we
+          własnym zespole weselnym. Prowadzenie imprez, zabaw, zarażanie
+          pozytywną energią oraz interakcja z gośćmi to jego naturalne
+          środowisko.
         </template>
       </TeamMember>
       <TeamMember photo="marcin.jpg" name="Marcin" :left="true">

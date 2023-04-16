@@ -21,18 +21,12 @@ import Extras from "../components/Extras.vue";
     <Extras />
     <Contact />
 
-    <Team />
-    <Games />
-
-    <div id="empty"></div>
+    <!--<Team />
+    <Games />-->
   </main>
 </template>
 
 <style>
-#empty {
-  height: 100vh;
-}
-
 main {
   overflow-x: hidden;
 }

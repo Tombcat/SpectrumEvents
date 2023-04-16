@@ -2,7 +2,9 @@
   <section id="about">
     <div class="container-fluid">
       <div class="about">
-        <div class="about__block about__block--text-block text-center">
+        <div
+          class="about__block about__block--text-block text-center d-flex flex-column justify-content-center"
+        >
           <h1 class="text-primary text-uppercase">Spectrum Events</h1>
           <p>
             to nie tylko dobra muzyka i profesjonalny DJ, to obowiązkowy element
@@ -12,28 +14,72 @@
             muzykę i zabawę, która pozostanie we wspomnieniach Waszych gości na
             bardzo długo?
           </p>
+          <button class="btn btn-primary btn-lg mt-4">
+            ZAPRASZAMY DO KONTAKTU
+          </button>
         </div>
         <div class="about__block about_full">
-          <img class="image" v-bind:src="pawel" alt="hello image" />
+          <img
+            class="image"
+            v-bind:src="image2"
+            alt="DJ/Wodzirej Paweł trzymający mikrofon"
+          />
         </div>
 
         <div class="about__block about__small">
-          <img class="image" v-bind:src="image" alt="hello image" />
+          <img
+            class="image"
+            v-bind:src="image"
+            alt="Marcin i Paweł z grupy spectrum events grających na konsoli djskiej"
+          />
+        </div>
+        <div class="about__block about_full">
+          <img
+            id="about-large-second"
+            class="image"
+            v-bind:src="image3"
+            alt="Grupa ludzi podrzuca Pana Młodego"
+          />
+        </div>
+        <div
+          class="about__block about__block--text-block text-center d-flex flex-column justify-content-center"
+        >
+          <h2 class="text-primary">Co powinniście o nas wiedziec?</h2>
+          Jesteśmy grupą zajmująca się profesjonalną obsługą imprez
+          okolicznościowych. Branżą imprez weselnych i okolicznościowych
+          zajmujemy się od ponad 15 lat. W tym czasie obsłużyliśmy mnóstwo
+          eventów, co zaowocowało ogromnym doświadczeniem, pomysłowością i
+          indywidualnym podejściem do klienta. Każde zlecenie poprzedzone jest
+          rozmową dotyczącą preferencji Młodej Pary oraz gości weselnych, co
+          gwarantuje stworzenie oferty idealnie dopasowanej do Waszych
+          oczekiwań.
+        </div>
+        <div
+          class="about__block about__block--text-block text-center d-flex flex-column justify-content-center"
+        >
+          <h2 class="text-primary">Nasza ekipa</h2>
+          <p>
+            W skład całego zespołu wchodzą DJ’e/ Wodzireje, Konferansjerzy,
+            profesjonalni saksofoniści, a także kamerzysta i licencjonowany
+            droniarz.
+          </p>
+          <button class="btn btn-primary btn-lg mt-4">WIĘCEJ O NAS</button>
         </div>
       </div>
 
-      <div class="row g-4">
+      <div class="row g-4" v-if="!true">
         <div class="col-md-5">
           <h2 class="text-primary">Co powinniście o nas wiedziec?</h2>
           Jesteśmy grupą zajmująca się profesjonalną obsługą imprez
           okolicznościowych. W skład całego zespołu wchodzą DJ’e/ Wodzireje,
-          Konferansjerzy, profesjonalni saksofoniści, a także, kamerzysta i
-          fotograf. Branżą imprez weselnych i okolicznościowych zajmujemy się od
-          ponad 15 lat. Obsłużyliśmy mnóstwo koncertów i imprez, co zaowocowało
-          ogromnym doświadczeniem, pomysłowością i indywidualnym podejściem do
-          klienta. Każde zlecenie poprzedzone jest rozmową dotyczącą preferencji
-          Młodej Pary oraz gości weselnych, co gwarantuje stworzenie oferty
-          idealnie dopasowanej do Waszych oczekiwań.
+          Konferansjerzy, profesjonalni saksofoniści, a także kamerzysta i
+          licencjonowany droniarz. Branżą imprez weselnych i okolicznościowych
+          zajmujemy się od ponad 15 lat. W tym czasie obsłużyliśmy mnóstwo
+          eventów, co zaowocowało ogromnym doświadczeniem, pomysłowością i
+          indywidualnym podejściem do klienta. Każde zlecenie poprzedzone jest
+          rozmową dotyczącą preferencji Młodej Pary oraz gości weselnych, co
+          gwarantuje stworzenie oferty idealnie dopasowanej do Waszych
+          oczekiwań.
         </div>
 
         <div class="col-md-7">
@@ -72,7 +118,8 @@
 
 <script>
 import image from "@/assets/zdj/main2.jpg";
-import pawel from "@/assets/zdj/pawel3.jpg";
+import image2 from "@/assets/zdj/pawel3.jpg";
+import image3 from "@/assets/zdj/maciej.jpg";
 
 import Notes from "./Notes.vue";
 
@@ -84,7 +131,8 @@ export default {
   data() {
     return {
       image: image,
-      pawel: pawel,
+      image2: image2,
+      image3: image3,
     };
   },
   mounted() {
@@ -151,14 +199,27 @@ export default {
   width: 100%;
   height: 100%;
   filter: grayscale(100%);
+  transition-duration: 0.8s;
+}
+
+.about__block:hover .image {
+  filter: grayscale(10%);
 }
 
 .about__block--text-block {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 12px;
+  min-height: 20rem;
+  padding: 30px 12px;
   text-decoration: none;
+}
+
+.about__block .btn {
+  width: fit-content;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#about-large-second {
+  object-position: center center;
 }
 
 @media only screen and (max-width: 760px) {
