@@ -18,7 +18,7 @@
             <a href="#contact">ZAPRASZAMY DO KONTAKTU</a>
           </button>
         </div>
-        <section
+        <div
           class="about__block about__block--full about__block--box-shadow comparisonSection order-3"
         >
           <div class="comparisonImage beforeImage">
@@ -37,7 +37,7 @@
               alt="Marcin"
             />
           </div>
-        </section>
+        </div>
 
         <div
           class="about__block about__small about__block--box-shadow order-1 order-md-4"
@@ -85,7 +85,10 @@
             profesjonalni saksofoniści, a także kamerzysta i licencjonowany
             droniarz.
           </p>
-          <button class="btn mt-4"><a href="#">WIĘCEJ O NAS</a></button>
+
+          <button class="btn mt-4">
+            <RouterLink to="/ekipa">Więcej o nas</RouterLink>
+          </button>
         </div>
         <div
           class="about__block about__block--text about__block--full-side text-center d-flex flex-column justify-content-center order-4"
@@ -102,41 +105,38 @@
 </template>
 
 <script>
-import image from "@/assets/zdj/pawel3.jpg";
-import image2 from "@/assets/zdj/marcin2.jpg";
-import image3 from "@/assets/zdj/marcinpawel.jpg";
-import image4 from "@/assets/zdj/maciej.jpg";
-
-import Notes from "./Notes.vue";
+import { RouterLink } from "vue-router";
 
 export default {
   name: "About",
-  components: {
-    Notes,
-  },
   data() {
     return {
       images: [
         {
-          src: image,
+          src: this.getImageUrl("pawel3.jpg"),
           position: "40% top",
         },
         {
-          src: image2,
+          src: this.getImageUrl("marcin2.jpg"),
           position: "30% top",
         },
         {
-          src: image3,
+          src: this.getImageUrl("marcinpawel.jpg"),
           position: "59% top",
         },
         {
-          src: image4,
+          src: this.getImageUrl("maciej.jpg"),
           position: "40% top",
         },
       ],
     };
   },
   methods: {
+    getImageUrl(photo) {
+      // This path must be correct for your file
+      return new URL(`../assets/zdj/${photo}`, import.meta.url);
+    },
+
     animate() {
       this.gsap.utils.toArray(".comparisonSection").forEach((section) => {
         let tl = this.gsap.timeline({

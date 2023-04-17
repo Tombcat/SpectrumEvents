@@ -5,13 +5,51 @@
         <div class="row">
           <div class="col-md-5 links">
             <h2 class="form__title mb-5 text-primary">Rozpocznijmy rozmowę.</h2>
-            <div class="d-flex flex-row mb-5 link" v-for="link in links">
+            <div class="d-flex flex-row mb-3 link" v-for="link in links">
               <div class="d-flex flex-column">
                 <h3 class="text-primary link__title">{{ link.title }}</h3>
                 <a v-bind:href="link.href + link.text" class="d-flex">
+                  <!--<font-awesome-icon
+                    style="
+                      font-size: calc(12px + 1vw);
+                      top: 50%;
+                      transform: translate(0, -50%);
+                      position: relative;
+                    "
+                    v-bind:icon="link.icon"
+                  />-->
                   <span class="link__text">{{ link.text }}</span></a
                 >
               </div>
+            </div>
+            <div class="social">
+              <a
+                href="https://www.facebook.com/spectrumevents0/"
+                class="social-link"
+                target="_blank"
+              >
+                <font-awesome-icon
+                  class="social-link__icon"
+                  icon="fa-brands fa-facebook"
+              /></a>
+              <a
+                href="https://www.instagram.com/spectrum_events_/"
+                class="social-link"
+                target="_blank"
+              >
+                <font-awesome-icon
+                  class="social-link__icon"
+                  icon="fa-brands fa-instagram"
+              /></a>
+              <a
+                href="https://www.weselezklasa.pl/spectrumevents/"
+                class="social-link"
+                target="_blank"
+              >
+                <font-awesome-icon
+                  class="social-link__icon"
+                  icon="fa-solid fa-ring"
+              /></a>
             </div>
           </div>
           <div class="col-md-1"></div>
@@ -104,16 +142,19 @@ export default {
           title: "Paweł Krabes",
           href: "tel:",
           text: "+48 512 952 668",
+          icon: "fa-solid fa-phone",
         },
         {
           title: "Marcin Włodarczyk",
           href: "tel:",
           text: "+48 696 835 045",
+          icon: "fa-solid fa-phone",
         },
         {
           title: "Napisz do nas",
           href: "mailto:",
           text: "spectrumevents.kontakt@gmail.com",
+          icon: "fa-solid fa-envelope",
         },
       ],
     };
@@ -133,7 +174,6 @@ export default {
 <style lang="scss">
 #contact {
   margin: var(--grid-gap) 0;
-  /* min-height: 100vh;*/
 }
 
 .contact {
@@ -171,7 +211,6 @@ export default {
 
 .field input:focus,
 .field textarea:focus {
-  /*background-color: var(--color-primary-darken);*/
   background-color: var(--color-background);
   color: #fff;
   border-color: var(--color-primary);
@@ -180,10 +219,6 @@ export default {
 
 .form {
   margin-top: 3vw;
-  /*background-color: var(--color-background-mute);*/
-  /*-webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-  -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);*/
-  /*box-shadow: 8px 8px 34px 0px var(--color-primary-darken);*/
   &__title {
     font-size: 12vw;
   }
@@ -192,6 +227,7 @@ export default {
 .link {
   &__text {
     word-break: break-all;
+    //padding-left: calc(var(--grid-gap) / 2);
   }
   &__image {
     width: 3rem;
@@ -200,13 +236,14 @@ export default {
   }
 }
 
-i {
-  display: flex;
-  place-items: center;
-  place-content: center;
-  width: 32px;
-  height: 32px;
-  color: var(--color-text);
+.social {
+  margin: 3vw 0;
+  &-link {
+    margin-right: 4vw;
+    &__icon {
+      font-size: calc(10px + 6vw);
+    }
+  }
 }
 
 @media only screen and (min-width: 760px) {
