@@ -2,11 +2,11 @@
 import TheWelcome from "../components/TheWelcome.vue";
 import Hero from "../components/Hero.vue";
 import About from "../components/About.vue";
-import Team from "../components/Team.vue";
+/*import Team from "../components/Team.vue";
 import Equipment from "../components/Equipment.vue";
 import Games from "../components/Games.vue";
 
-import SpiningLogo from "../components/SpiningLogo.vue";
+import SpiningLogo from "../components/SpiningLogo.vue";*/
 import Contact from "../components/Contact.vue";
 import Extras from "../components/Extras.vue";
 </script>
@@ -26,7 +26,7 @@ import Extras from "../components/Extras.vue";
   </main>
 </template>
 
-<style>
+<style lang="scss">
 main {
   overflow-x: hidden;
 }

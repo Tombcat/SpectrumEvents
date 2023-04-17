@@ -1,44 +1,99 @@
 @import './base.css';
 
-#app {
-  /*max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;*/
-
-  font-weight: normal;
-}
-
-a,
-.green {
+a{
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+  color: var(--color-text);
+  transition: var(--animation-time-short);
 }
 
-/*.imageFrame{
-  border-width:0px;
-  border-style:solid;
-  border-color:white;
-  /*border: 30px solid #fff;
-}*/
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+a:hover{
+  color: var(--color-primary);
 }
 
+a:active{
+  color: var(--color-primary-darken);
+}
 
-/*@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.4;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: calc(12px + 1vw);/*18px;*/
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-primary) var(--color-border);
   }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 18px;
   }
-}*/
 
+  *::-webkit-scrollbar-track {
+    background: var(--color-border);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    border: 3px solid var(--color-primary-darken);
+  }
+
+  
+.zindex-1{
+  z-index: 1;
+}
+
+.zindex-2{
+  z-index: 2;
+}
+
+.text-justify{
+  text-align: justify;
+}
+
+.text-primary{
+  color: var(--color-primary) !important;
+}
+.btn {
+  border: none;
+  background-color: var(--color-background);
+  text-shadow: 0 0 30px var(--color-primary);
+  -webkit-box-shadow: 0 20px 20px -17px var(--color-primary);
+  -moz-box-shadow: 0 20px 20px -17px var(--color-primary);
+  box-shadow: 0 20px 20px -17px var(--color-primary);
+  width: fit-content;
+  color: #fff !important;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.btn a {
+  color: #fff !important;
+  text-decoration: none;
+}
+.btn a:hover {
+  background-color: none;
+}
+.btn:hover {
+  background-color: var(--color-background-soft);
+  color: var(--color-primary) !important;
+  transform: scale(1.2);
+  -webkit-box-shadow: 0 30px 45px -15px var(--color-primary);
+  -moz-box-shadow: 0 30px 45px -15px var(--color-primary);
+  box-shadow: 0 30px 45px -15px var(--color-primary);
+}
+.btn:hover a {
+  color: var(--color-primary) !important;
+}

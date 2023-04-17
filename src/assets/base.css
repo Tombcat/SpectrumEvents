@@ -24,9 +24,14 @@
   --color-primary-darken: #584100;
 
   --background-primary : #181818;
-
   --background-secondary : #181818;
-  
+
+  --animation-time: 0.8s;
+  --animation-time-longer: 1.2s;
+  --animation-time-short: 0.4s;
+
+
+  --grid-gap: 20px;
 }
 
 /* semantic color variables for this project */
@@ -39,9 +44,9 @@
   --color-border-hover: var(--vt-c-divider-light-1);
 
   --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);*/
 
-  --section-gap: 160px;*/
+  --section-gap: 160px;
 
     --color-background: var(--vt-c-black);
     --color-background-soft: var(--vt-c-black-soft);
@@ -54,9 +59,14 @@
     --color-text: var(--vt-c-text-dark-2);
 }
 
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
+    
     --color-background: var(--vt-c-black);
     --color-background-soft: var(--vt-c-black-soft);
     --color-background-mute: var(--vt-c-black-mute);
@@ -67,6 +77,10 @@
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
   }
+
+  ::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+  }
 }
 
 *,
@@ -76,35 +90,4 @@
   margin: 0;
   position: relative;
   font-weight: normal;
-}
-
-body {
-  min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition: color 0.5s, background-color 0.5s;
-  line-height: 1.4;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  font-size: calc(12px + 1vw);/*18px;*/
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-.zindex-1{
-  z-index: 1;
-}
-
-.zindex-2{
-  z-index: 2;
-}
-
-.text-justify{
-  text-align: justify;
-}
-
-.text-primary{
-  color: var(--color-primary) !important;
 }

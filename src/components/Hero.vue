@@ -249,7 +249,7 @@
       </svg>
     </div>
 
-    <video class="-video" :src="video" autoplay loop muted></video>
+    <video class="-video" v-if="!true" :src="video" autoplay loop muted></video>
   </section>
 </template>
 
