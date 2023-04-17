@@ -87,25 +87,10 @@
 </template>
 
 <script>
-import image from "@/assets/zdj/main2.jpg";
-import pawel from "@/assets/zdj/pawel3.jpg";
-import IconBase from "./IconBase.vue";
-import IconCalendar from "./icons/IconCalendar.vue";
-import IconEnvelope from "./icons/IconEnvelope.vue";
-import IconPhone from "./icons/IconPhone.vue";
-
-import phone from "@/assets/icon/phone.png";
-
 export default {
   name: "Contact",
-  components: { IconBase, IconCalendar, IconEnvelope, IconPhone },
-
   data() {
     return {
-      image: image,
-      icons: {
-        phone: phone,
-      },
       form: {
         email: undefined,
         phone: undefined,
@@ -119,19 +104,16 @@ export default {
           title: "Paweł Krabes",
           href: "tel:",
           text: "+48 512 952 668",
-          icon: phone,
         },
         {
           title: "Marcin Włodarczyk",
           href: "tel:",
           text: "+48 696 835 045",
-          icon: phone,
         },
         {
           title: "Napisz do nas",
           href: "mailto:",
           text: "spectrumevents.kontakt@gmail.com",
-          icon: phone,
         },
       ],
     };
